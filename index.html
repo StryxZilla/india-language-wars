@@ -4,11 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>India's Language Wars: A Data-Driven Story</title>
+    
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:title" content="India's Language Wars: A Data-Driven Story">
+    <meta property="og:description" content="How a nation of 22 official languages navigates the world's most complex linguistic democracy — and why the fight over Hindi never really ended.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://stryxzilla.github.io/india-language-wars/">
+    <meta property="og:image" content="https://stryxzilla.github.io/india-language-wars/og-image.png">
+    <meta property="og:site_name" content="OpenClaw Analysis">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="India's Language Wars: A Data-Driven Story">
+    <meta name="twitter:description" content="How a nation of 22 official languages navigates the world's most complex linguistic democracy.">
+    <meta name="twitter:image" content="https://stryxzilla.github.io/india-language-wars/og-image.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,12 +42,34 @@
         </div>
     </header>
 
+    <!-- Floating Share Bar -->
+    <div class="share-bar" id="shareBar">
+        <span class="share-label">Share</span>
+        <a href="#" class="share-btn twitter" id="shareTwitter" title="Share on Twitter" aria-label="Share on Twitter">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" class="share-btn facebook" id="shareFacebook" title="Share on Facebook" aria-label="Share on Facebook">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="share-btn linkedin" id="shareLinkedIn" title="Share on LinkedIn" aria-label="Share on LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <button class="share-btn copy" id="shareCopy" title="Copy link" aria-label="Copy link">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        </button>
+    </div>
+
     <main class="container">
+        <!-- Sources Navigation -->
+        <nav class="sources-nav" id="sourcesNav">
+            <a href="#sources" class="sources-link">📊 View Data Sources</a>
+        </nav>
+
         <!-- The Stakes -->
         <section class="article-section">
             <p class="dropcap">When the Indian Constitution was adopted in 1950, its framers punted on one of the most divisive questions facing the new nation: What should be its official language? They chose a compromise — Hindi in the Devanagari script would be the official language, but English would continue for 15 years. That 15-year deadline has now stretched to 76 years and counting.</p>
             
-            <p>India is home to <strong>1,652 mother tongues</strong> according to the census, with 22 languages officially recognized in the Constitution's Eighth Schedule. The linguistic diversity is staggering — India's diversity index of 0.914 means that two randomly selected Indians will speak different native languages 91.4% of the time.</p>
+            <p>India is home to <strong>1,652 mother tongues</strong> according to the census, with 22 languages officially recognized in the Constitution's Eighth Schedule. The linguistic diversity is staggering — India's diversity index of 0.914 means that two randomly selected Indians will speak different native languages 91.4% of the time.<sup><a href="#sources">[1]</a></sup></p>
 
             <p>This isn't just a bureaucratic curiosity. Language in India is intertwined with regional identity, political power, and economic opportunity. The question of which language gets official status is a question of which communities get access to government jobs, education, and political representation.</p>
         </section>
@@ -41,13 +81,17 @@
             <div class="chart-container">
                 <canvas id="languageChart"></canvas>
             </div>
-            <p class="chart-note">Note: Hindi includes 57 "mother tongues" grouped together by census methodology, including Bhojpuri (50M), Rajasthani (18M), and Chhattisgarhi (18M). Source: Census of India 2011</p>
+            <p class="chart-note">Note: Hindi includes 57 "mother tongues" grouped together by census methodology, including Bhojpuri (50M), Rajasthani (18M), and Chhattisgarhi (18M). <a href="#sources">Source: Census of India 2011</a></p>
+            <div class="inline-share">
+                <span>Share this insight:</span>
+                <button class="mini-share" data-text="Hindi is spoken by 43.6% of Indians as a native language — still not a majority. India's Language Wars: " data-url="https://stryxzilla.github.io/india-language-wars/">Tweet</button>
+            </div>
         </section>
 
         <!-- The North-South Divide -->
         <section class="article-section">
             <h2>The Great Linguistic Divide</h2>
-            <p>The map of India's languages tells the story of a fundamental cultural split. The northern "Hindi Belt" — comprising states like Uttar Pradesh, Bihar, Rajasthan, and Madhya Pradesh — uses languages from the Indo-Aryan family, closely related to Hindi. The southern states speak entirely different Dravidian languages: Tamil, Telugu, Kannada, and Malayalam.</p>
+            <p>The map of India's languages tells the story of a fundamental cultural split. The northern "Hindi Belt" — comprising states like Uttar Pradesh, Bihar, Rajasthan, and Madhya Pradesh — uses languages from the Indo-Aryan family, closely related to Hindi. The southern states speak entirely different Dravidian languages: Tamil, Telugu, Kannada, and Malayalam.<sup><a href="#sources">[2]</a></sup></p>
             
             <p>This isn't just a linguistic difference. Dravidian languages are part of a distinct language family with no relation to Hindi whatsoever. A Tamil speaker learning Hindi faces the same challenge as an English speaker learning Mandarin — completely different vocabulary, grammar, and script.</p>
         </section>
@@ -63,6 +107,7 @@
                 <div class="legend-item"><span class="legend-color other-indo"></span> Other Indo-Aryan</div>
                 <div class="legend-item"><span class="legend-color tibeto"></span> Tibeto-Burman</div>
             </div>
+            <p class="chart-note">Geographic choropleth showing language family distribution. The north-south divide is clearly visible. <a href="#sources">Source: Census of India 2011</a></p>
         </section>
 
         <!-- Pull Quote -->
@@ -74,7 +119,7 @@
         <!-- Timeline of Conflict -->
         <section class="article-section">
             <h2>A Century of Resistance</h2>
-            <p>The anti-Hindi movement in Tamil Nadu is among the longest-running political movements in modern India. What began as resistance to a 1937 government order has evolved into a defining feature of Tamil political identity.</p>
+            <p>The anti-Hindi movement in Tamil Nadu is among the longest-running political movements in modern India. What began as resistance to a 1937 government order has evolved into a defining feature of Tamil political identity.<sup><a href="#sources">[3]</a></sup></p>
         </section>
 
         <section class="chart-section">
@@ -147,7 +192,7 @@
         <!-- The Three-Language Formula -->
         <section class="article-section">
             <h2>The Three-Language Formula: A Policy Without Consensus</h2>
-            <p>Since 1968, India has officially followed a "three-language formula" for education: students should learn their mother tongue, Hindi, and English. In theory, this promotes linguistic harmony. In practice, it's a asymmetric burden.</p>
+            <p>Since 1968, India has officially followed a "three-language formula" for education: students should learn their mother tongue, Hindi, and English. In theory, this promotes linguistic harmony. In practice, it's a asymmetric burden.<sup><a href="#sources">[4]</a></sup></p>
         </section>
 
         <section class="chart-section">
@@ -178,28 +223,55 @@
         <!-- The Political Stakes Chart -->
         <section class="chart-section">
             <h2 class="chart-title">Who Speaks What — And Who Has Power</h2>
-            <p class="chart-subtitle">Parliamentary seats vs. language speakers — Hindi Belt states are overrepresented relative to population</p>
-            <div class="chart-container">
+            <p class="chart-subtitle">Hindi Belt states hold 40% of Parliament but represent only 35% of population</p>
+            <div class="chart-container chart-medium">
                 <canvas id="powerChart"></canvas>
             </div>
-            <p class="chart-note">Hindi Belt states (UP, Bihar, MP, Rajasthan, Jharkhand, Chhattisgarh, HP, UK) hold ~40% of Lok Sabha seats. Source: Election Commission of India, Census 2011</p>
+            <p class="chart-note">Hindi Belt states (UP, Bihar, MP, Rajasthan, Jharkhand, Chhattisgarh, HP, UK) hold ~40% of Lok Sabha seats while representing ~35% of population. The gap shows structural overrepresentation. <a href="#sources">Source: Election Commission of India, Census 2011</a></p>
+            <div class="inline-share">
+                <span>Share this insight:</span>
+                <button class="mini-share" data-text="Hindi Belt states hold 40% of Parliament but only 35% of India's population. India's Language Wars: " data-url="https://stryxzilla.github.io/india-language-wars/">Tweet</button>
+            </div>
         </section>
 
         <!-- The Economic Angle -->
         <section class="article-section">
             <h2>Follow the Money</h2>
-            <p>The language debate isn't just cultural — it's economic. Government jobs, competitive exams, and central services all require language proficiency. The choice of language determines who can compete.</p>
+            <p>The language debate isn't just cultural — it's economic. Government jobs, competitive exams, and central services all require language proficiency. The choice of language determines who can compete.<sup><a href="#sources">[5]</a></sup></p>
             
             <p>Tamil Nadu argues that forcing Hindi creates a "two-tier system" where Hindi speakers have an inherent advantage in central government recruitment. The counter-argument: Hindi as a link language would reduce the advantage currently held by English-educated elites.</p>
         </section>
 
         <section class="chart-section">
             <h2 class="chart-title">The Second Language Advantage</h2>
-            <p class="chart-subtitle">Percentage of population speaking Hindi (as 1st, 2nd, or 3rd language)</p>
+            <p class="chart-subtitle">Hindi reaches 6× more people than English as a second language</p>
+            <div class="hero-stat">
+                <div class="hero-comparison">
+                    <div class="hero-item hindi-item">
+                        <div class="hero-number">57.1%</div>
+                        <div class="hero-label">Can speak Hindi</div>
+                        <div class="hero-sublabel">(Native + Second Language)</div>
+                    </div>
+                    <div class="hero-vs">vs</div>
+                    <div class="hero-item english-item">
+                        <div class="hero-number">10.6%</div>
+                        <div class="hero-label">Can speak English</div>
+                        <div class="hero-sublabel">(Native + Second Language)</div>
+                    </div>
+                </div>
+                <div class="hero-insight">
+                    <span class="insight-badge">Key Insight</span>
+                    Hindi reaches <strong>6× more people</strong> than English — but English provides global access
+                </div>
+            </div>
             <div class="chart-container chart-small">
                 <canvas id="bilingualChart"></canvas>
             </div>
-            <p class="chart-note">While 43.6% speak Hindi as a native language, 57.1% can speak it at some level. English reaches only 10.6%. Source: Census 2011</p>
+            <p class="chart-note">While 43.6% speak Hindi as a native language, 57.1% can speak it at some level. English reaches only 10.6%. <a href="#sources">Source: Census 2011</a></p>
+            <div class="inline-share">
+                <span>Share this insight:</span>
+                <button class="mini-share" data-text="Hindi reaches 57% of Indians while English reaches only 10.6%. But which language opens more doors? India's Language Wars: " data-url="https://stryxzilla.github.io/india-language-wars/">Tweet</button>
+            </div>
         </section>
 
         <!-- Political Positions -->
@@ -280,23 +352,67 @@
             <p>The story of India's linguistic democracy is ultimately a story about what kind of nation India wants to be: a federation of distinct peoples united by a common framework, or a homogenized nation-state with a single dominant identity. Seventy-six years in, the answer remains contested.</p>
         </section>
 
-        <!-- Data Sources -->
-        <section class="sources">
-            <h3>Data Sources</h3>
-            <ul>
-                <li>Census of India 2011, Language Data (Paper 1 of 2018)</li>
-                <li>Constitution of India, Articles 343-351</li>
-                <li>Election Commission of India, Lok Sabha constituency data</li>
-                <li>Academic sources on anti-Hindi agitations (Ramaswamy, 2005; Irschick, 1969)</li>
-                <li>Contemporary reporting from The Hindu, Frontline, India Today</li>
-            </ul>
+        <!-- Data Sources - Now more prominent -->
+        <section class="sources" id="sources">
+            <h3>📊 Data Sources & Methodology</h3>
+            <div class="sources-grid">
+                <div class="source-item">
+                    <span class="source-number">[1]</span>
+                    <div class="source-content">
+                        <strong>Census of India 2011</strong>
+                        <p>Language Data (Paper 1 of 2018). Population figures and language speaker percentages.</p>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-number">[2]</span>
+                    <div class="source-content">
+                        <strong>Constitution of India</strong>
+                        <p>Articles 343-351 (Official Language provisions) and Eighth Schedule (22 scheduled languages).</p>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-number">[3]</span>
+                    <div class="source-content">
+                        <strong>Academic Sources</strong>
+                        <p>Ramaswamy, S. (1997). "Passions of the Tongue"; Irschick, E. (1969). "Politics and Social Conflict in South India"</p>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-number">[4]</span>
+                    <div class="source-content">
+                        <strong>Election Commission of India</strong>
+                        <p>Lok Sabha constituency data and delimitation commission reports.</p>
+                    </div>
+                </div>
+                <div class="source-item">
+                    <span class="source-number">[5]</span>
+                    <div class="source-content">
+                        <strong>Contemporary Reporting</strong>
+                        <p>The Hindu, Frontline, India Today — reporting on NEP 2019, Amit Shah statement 2022.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="methodology-note">
+                <strong>Note on Hindi speaker data:</strong> The Census groups 57 distinct "mother tongues" under Hindi, including Bhojpuri (50M speakers), Rajasthani (18M), Chhattisgarhi (18M), and Marwari (7M). Linguists debate whether these are dialects of Hindi or distinct languages.
+            </p>
+        </section>
+
+        <!-- Final Share CTA -->
+        <section class="share-cta">
+            <h3>Found this insightful?</h3>
+            <p>Share India's Language Wars with your network</p>
+            <div class="share-cta-buttons">
+                <a href="#" class="cta-share-btn twitter" id="ctaTwitter">Share on Twitter</a>
+                <a href="#" class="cta-share-btn facebook" id="ctaFacebook">Share on Facebook</a>
+                <a href="#" class="cta-share-btn linkedin" id="ctaLinkedIn">Share on LinkedIn</a>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
             <p>A data visualization project exploring India's linguistic politics.</p>
-            <p class="footer-note">Built with Chart.js • Inspired by FiveThirtyEight's data journalism</p>
+            <p class="footer-note">Built with Chart.js & D3.js • Inspired by FiveThirtyEight's data journalism</p>
         </div>
     </footer>
 
