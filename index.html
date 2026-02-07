@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India's Language Wars: A Data-Driven Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <p class="section-label">POLITICS & IDENTITY</p>
+            <h1>The Battle for India's Tongue</h1>
+            <p class="subtitle">How a nation of 22 official languages navigates the world's most complex linguistic democracy — and why the fight over Hindi never really ended.</p>
+            <div class="byline">
+                <span class="author">By OpenClaw Analysis</span>
+                <span class="date">February 2026</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- The Stakes -->
+        <section class="article-section">
+            <p class="dropcap">When the Indian Constitution was adopted in 1950, its framers punted on one of the most divisive questions facing the new nation: What should be its official language? They chose a compromise — Hindi in the Devanagari script would be the official language, but English would continue for 15 years. That 15-year deadline has now stretched to 76 years and counting.</p>
+            
+            <p>India is home to <strong>1,652 mother tongues</strong> according to the census, with 22 languages officially recognized in the Constitution's Eighth Schedule. The linguistic diversity is staggering — India's diversity index of 0.914 means that two randomly selected Indians will speak different native languages 91.4% of the time.</p>
+
+            <p>This isn't just a bureaucratic curiosity. Language in India is intertwined with regional identity, political power, and economic opportunity. The question of which language gets official status is a question of which communities get access to government jobs, education, and political representation.</p>
+        </section>
+
+        <!-- Language Demographics Chart -->
+        <section class="chart-section">
+            <h2 class="chart-title">Hindi Is Growing — But It's Still Not a Majority</h2>
+            <p class="chart-subtitle">Native speakers of scheduled languages as percentage of population, 2011 Census</p>
+            <div class="chart-container">
+                <canvas id="languageChart"></canvas>
+            </div>
+            <p class="chart-note">Note: Hindi includes 57 "mother tongues" grouped together by census methodology, including Bhojpuri (50M), Rajasthani (18M), and Chhattisgarhi (18M). Source: Census of India 2011</p>
+        </section>
+
+        <!-- The North-South Divide -->
+        <section class="article-section">
+            <h2>The Great Linguistic Divide</h2>
+            <p>The map of India's languages tells the story of a fundamental cultural split. The northern "Hindi Belt" — comprising states like Uttar Pradesh, Bihar, Rajasthan, and Madhya Pradesh — uses languages from the Indo-Aryan family, closely related to Hindi. The southern states speak entirely different Dravidian languages: Tamil, Telugu, Kannada, and Malayalam.</p>
+            
+            <p>This isn't just a linguistic difference. Dravidian languages are part of a distinct language family with no relation to Hindi whatsoever. A Tamil speaker learning Hindi faces the same challenge as an English speaker learning Mandarin — completely different vocabulary, grammar, and script.</p>
+        </section>
+
+        <!-- Interactive Map Visualization -->
+        <section class="chart-section">
+            <h2 class="chart-title">A Linguistic Map of India</h2>
+            <p class="chart-subtitle">Primary official language by state — The Hindi belt dominates the north, while the south speaks Dravidian languages</p>
+            <div class="map-container" id="indiaMap"></div>
+            <div class="map-legend">
+                <div class="legend-item"><span class="legend-color hindi"></span> Hindi Belt (Indo-Aryan)</div>
+                <div class="legend-item"><span class="legend-color dravidian"></span> Dravidian Languages</div>
+                <div class="legend-item"><span class="legend-color other-indo"></span> Other Indo-Aryan</div>
+                <div class="legend-item"><span class="legend-color tibeto"></span> Tibeto-Burman</div>
+            </div>
+        </section>
+
+        <!-- Pull Quote -->
+        <blockquote class="pullquote">
+            "We are not against Hindi. We are against the imposition of Hindi. We Tamils have no hatred for any language."
+            <cite>— M.K. Stalin, Chief Minister of Tamil Nadu, 2022</cite>
+        </blockquote>
+
+        <!-- Timeline of Conflict -->
+        <section class="article-section">
+            <h2>A Century of Resistance</h2>
+            <p>The anti-Hindi movement in Tamil Nadu is among the longest-running political movements in modern India. What began as resistance to a 1937 government order has evolved into a defining feature of Tamil political identity.</p>
+        </section>
+
+        <section class="chart-section">
+            <h2 class="chart-title">Timeline of India's Language Conflicts</h2>
+            <p class="chart-subtitle">Key events in the battle over Hindi as official language</p>
+            <div class="timeline" id="timeline">
+                <div class="timeline-item" data-year="1937">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>1937: The First Agitation</h3>
+                        <p>Congress government in Madras Presidency makes Hindi compulsory in schools. Periyar E.V. Ramasamy and the Justice Party launch protests. The three-year agitation sees 1,198 arrests and 2 deaths.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="1949">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>1949: The Constitutional Compromise</h3>
+                        <p>After bitter debate, Constituent Assembly adopts Article 343: Hindi becomes official language, English continues for 15 years. The "Munshi-Ayyangar formula" — a fragile compromise between Hindi advocates and opponents.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="1963">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>1963: Nehru's Assurance</h3>
+                        <p>PM Nehru passes Official Languages Act, promising English can continue as long as non-Hindi states want. But the law lacks teeth — an assurance, not a guarantee.</p>
+                    </div>
+                </div>
+                <div class="timeline-item major" data-year="1965">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>1965: Fire and Blood</h3>
+                        <p>As the 15-year deadline approaches, Tamil Nadu erupts. Students lead massive protests. <strong>At least 70 killed</strong> (unofficial estimates: 500+). Two protesters self-immolate. Riots spread across the state. The deadliest language conflict in Indian history.</p>
+                        <div class="stat-callout">
+                            <span class="stat-number">70+</span>
+                            <span class="stat-label">Deaths (official)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="1967">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>1967: Political Revolution</h3>
+                        <p>DMK sweeps elections, ending Congress rule in Tamil Nadu permanently. Indira Gandhi amends Official Languages Act to guarantee indefinite bilingualism. The current policy is born.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="2019">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>2019: NEP Controversy</h3>
+                        <p>Draft National Education Policy includes three-language formula mentioning Hindi. Tamil Nadu erupts again. Government walks back the provision within days.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="2022">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>2022: Amit Shah's Statement</h3>
+                        <p>Home Minister Amit Shah suggests Hindi as "alternative to English." Protests erupt. "#HindiTeriyaadhPoda" (Don't know Hindi, get lost) trends nationwide.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-year="2025">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3>2025: The Debate Continues</h3>
+                        <p>Parliament sees fierce clashes over NEP implementation. DMK stages walkouts. The 60th anniversary of the 1965 agitation is commemorated with renewed calls for linguistic equality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Three-Language Formula -->
+        <section class="article-section">
+            <h2>The Three-Language Formula: A Policy Without Consensus</h2>
+            <p>Since 1968, India has officially followed a "three-language formula" for education: students should learn their mother tongue, Hindi, and English. In theory, this promotes linguistic harmony. In practice, it's a asymmetric burden.</p>
+        </section>
+
+        <section class="chart-section">
+            <h2 class="chart-title">The Asymmetry Problem</h2>
+            <p class="chart-subtitle">What the three-language formula actually means in different regions</p>
+            <div class="comparison-table">
+                <div class="comparison-col">
+                    <h3>In Tamil Nadu (Two-Language Policy)</h3>
+                    <ul>
+                        <li><strong>Language 1:</strong> Tamil (mother tongue)</li>
+                        <li><strong>Language 2:</strong> English (global access)</li>
+                        <li><strong>Language 3:</strong> ❌ Not implemented</li>
+                    </ul>
+                    <p class="comparison-note">Tamil Nadu has rejected the three-language formula since 1967, arguing Hindi offers no benefit while English provides global opportunity.</p>
+                </div>
+                <div class="comparison-col">
+                    <h3>In Uttar Pradesh (Hindi Belt)</h3>
+                    <ul>
+                        <li><strong>Language 1:</strong> Hindi (mother tongue)</li>
+                        <li><strong>Language 2:</strong> English</li>
+                        <li><strong>Language 3:</strong> Sanskrit (ancient, rarely spoken)</li>
+                    </ul>
+                    <p class="comparison-note">Hindi-speaking states often satisfy the third language with Sanskrit — a language with only 25,000 native speakers — avoiding the burden of learning a living Indian language.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Political Stakes Chart -->
+        <section class="chart-section">
+            <h2 class="chart-title">Who Speaks What — And Who Has Power</h2>
+            <p class="chart-subtitle">Parliamentary seats vs. language speakers — Hindi Belt states are overrepresented relative to population</p>
+            <div class="chart-container">
+                <canvas id="powerChart"></canvas>
+            </div>
+            <p class="chart-note">Hindi Belt states (UP, Bihar, MP, Rajasthan, Jharkhand, Chhattisgarh, HP, UK) hold ~40% of Lok Sabha seats. Source: Election Commission of India, Census 2011</p>
+        </section>
+
+        <!-- The Economic Angle -->
+        <section class="article-section">
+            <h2>Follow the Money</h2>
+            <p>The language debate isn't just cultural — it's economic. Government jobs, competitive exams, and central services all require language proficiency. The choice of language determines who can compete.</p>
+            
+            <p>Tamil Nadu argues that forcing Hindi creates a "two-tier system" where Hindi speakers have an inherent advantage in central government recruitment. The counter-argument: Hindi as a link language would reduce the advantage currently held by English-educated elites.</p>
+        </section>
+
+        <section class="chart-section">
+            <h2 class="chart-title">The Second Language Advantage</h2>
+            <p class="chart-subtitle">Percentage of population speaking Hindi (as 1st, 2nd, or 3rd language)</p>
+            <div class="chart-container chart-small">
+                <canvas id="bilingualChart"></canvas>
+            </div>
+            <p class="chart-note">While 43.6% speak Hindi as a native language, 57.1% can speak it at some level. English reaches only 10.6%. Source: Census 2011</p>
+        </section>
+
+        <!-- Political Positions -->
+        <section class="article-section">
+            <h2>The Political Chessboard</h2>
+            <p>Language policy in India is inseparable from party politics. Where a party stands on Hindi often predicts its regional base and coalition possibilities.</p>
+        </section>
+
+        <section class="chart-section">
+            <h2 class="chart-title">Party Positions on Language Policy</h2>
+            <div class="party-grid">
+                <div class="party-card pro-hindi">
+                    <h3>Pro-Hindi Promotion</h3>
+                    <div class="party-list">
+                        <div class="party-item">
+                            <strong>BJP</strong>
+                            <p>Advocates Hindi as "link language," promotes Hindi in central institutions, but increasingly cautious after southern backlash.</p>
+                        </div>
+                        <div class="party-item">
+                            <strong>RSS/Sangh Parivar</strong>
+                            <p>"One nation, one language" ideology. Views Hindi as essential to national unity.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="party-card anti-imposition">
+                    <h3>Anti-Hindi Imposition</h3>
+                    <div class="party-list">
+                        <div class="party-item">
+                            <strong>DMK</strong>
+                            <p>Strongest opponent. Founded partly on anti-Hindi platform. Follows strict two-language policy in Tamil Nadu.</p>
+                        </div>
+                        <div class="party-item">
+                            <strong>AIADMK</strong>
+                            <p>Also opposes imposition, though less vocally than DMK. Maintains two-language policy.</p>
+                        </div>
+                        <div class="party-item">
+                            <strong>Regional Parties (South)</strong>
+                            <p>TDP, TRS, JDS generally oppose Hindi imposition but with less intensity than Tamil parties.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="party-card neutral">
+                    <h3>Moderate / Contextual</h3>
+                    <div class="party-list">
+                        <div class="party-item">
+                            <strong>Congress (INC)</strong>
+                            <p>Historically favored Hindi but now cautious. Led the 1937 pro-Hindi policy but also passed 1967 amendment protecting English.</p>
+                        </div>
+                        <div class="party-item">
+                            <strong>Left Parties</strong>
+                            <p>Generally support linguistic rights and oppose "imposition" while acknowledging need for link language.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Way Forward -->
+        <section class="article-section">
+            <h2>What Could a Solution Look Like?</h2>
+            <p>Several alternatives have been proposed over the decades:</p>
+            
+            <ul class="styled-list">
+                <li><strong>Symmetric Three-Language Formula:</strong> Hindi Belt states must learn a southern language, just as the south is expected to learn Hindi. Currently, only Karnataka has experimented with teaching Tamil/Telugu as third language options.</li>
+                <li><strong>All Languages Official:</strong> APJ Abdul Kalam proposed making all 22 scheduled languages official languages of India, not just Hindi. This remains the DMK's stated goal.</li>
+                <li><strong>English as Neutral Link:</strong> Continue English as the inter-state communication language — a "colonial hangover" that ironically provides a level playing field since it's equally foreign to all.</li>
+                <li><strong>Machine Translation:</strong> As AI translation improves, the practical need for a single link language diminishes. Government services could theoretically operate in all 22 scheduled languages.</li>
+            </ul>
+        </section>
+
+        <!-- Final Thoughts -->
+        <section class="article-section conclusion">
+            <h2>The Unfinished Story</h2>
+            <p>India's language policy remains what it was in 1950: an unstable compromise held together by political expediency rather than consensus. The Constitution's "15 years" of English has become indefinite bilingualism. Hindi continues to grow — but so does resistance to its imposition.</p>
+            
+            <p>The 1965 agitation showed that linguistic identity in India runs deep enough to die for. The 2019 and 2022 flare-ups showed the issue hasn't cooled. As long as language remains tied to power, opportunity, and identity, India's language wars will continue — fought in Parliament, in streets, and in the quiet choices of what language to teach one's children.</p>
+
+            <p>The story of India's linguistic democracy is ultimately a story about what kind of nation India wants to be: a federation of distinct peoples united by a common framework, or a homogenized nation-state with a single dominant identity. Seventy-six years in, the answer remains contested.</p>
+        </section>
+
+        <!-- Data Sources -->
+        <section class="sources">
+            <h3>Data Sources</h3>
+            <ul>
+                <li>Census of India 2011, Language Data (Paper 1 of 2018)</li>
+                <li>Constitution of India, Articles 343-351</li>
+                <li>Election Commission of India, Lok Sabha constituency data</li>
+                <li>Academic sources on anti-Hindi agitations (Ramaswamy, 2005; Irschick, 1969)</li>
+                <li>Contemporary reporting from The Hindu, Frontline, India Today</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>A data visualization project exploring India's linguistic politics.</p>
+            <p class="footer-note">Built with Chart.js • Inspired by FiveThirtyEight's data journalism</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

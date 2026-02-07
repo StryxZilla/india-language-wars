@@ -1,0 +1,575 @@
+/* 538-Style Data Visualization CSS */
+:root {
+    --primary-color: #ed713a;
+    --secondary-color: #3b5998;
+    --text-color: #222;
+    --text-light: #666;
+    --background: #f7f7f7;
+    --card-bg: #fff;
+    --border-color: #ddd;
+    --chart-grid: #e5e5e5;
+    
+    /* Language colors */
+    --hindi-color: #e74c3c;
+    --dravidian-color: #3498db;
+    --other-indo: #2ecc71;
+    --tibeto-color: #9b59b6;
+    
+    /* Party colors */
+    --pro-hindi: #ff6b35;
+    --anti-imposition: #1a535c;
+    --neutral: #6c757d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Libre Franklin', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--background);
+    color: var(--text-color);
+    line-height: 1.7;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header / Hero */
+.hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    padding: 80px 0 60px;
+    margin-bottom: 60px;
+}
+
+.section-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: #b8c5d6;
+    max-width: 640px;
+    margin-bottom: 24px;
+}
+
+.byline {
+    font-size: 14px;
+    color: #8899aa;
+    display: flex;
+    gap: 20px;
+}
+
+.author {
+    font-weight: 600;
+}
+
+/* Article Sections */
+.article-section {
+    margin-bottom: 48px;
+}
+
+.article-section h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.article-section p {
+    margin-bottom: 20px;
+}
+
+.dropcap::first-letter {
+    font-size: 4rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    float: left;
+    line-height: 0.8;
+    padding-right: 12px;
+    padding-top: 6px;
+    color: var(--primary-color);
+}
+
+/* Charts */
+.chart-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 32px;
+    margin: 48px 0;
+}
+
+.chart-title {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.chart-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 24px;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.chart-container.chart-small {
+    height: 300px;
+}
+
+.chart-note {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    border-top: 1px solid var(--border-color);
+    padding-top: 12px;
+    margin-top: 12px;
+}
+
+/* Map Visualization */
+.map-container {
+    background: #f0f4f8;
+    border-radius: 4px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-legend {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+}
+
+.legend-color.hindi { background: var(--hindi-color); }
+.legend-color.dravidian { background: var(--dravidian-color); }
+.legend-color.other-indo { background: var(--other-indo); }
+.legend-color.tibeto { background: var(--tibeto-color); }
+
+/* Pull Quote */
+.pullquote {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--text-color);
+    border-left: 4px solid var(--primary-color);
+    padding: 24px 32px;
+    margin: 48px 0;
+    background: #fff8f5;
+}
+
+.pullquote cite {
+    display: block;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 0.9rem;
+    font-style: normal;
+    color: var(--text-light);
+    margin-top: 16px;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--border-color);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 64px;
+    padding-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 16px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    background: var(--card-bg);
+    border: 3px solid var(--secondary-color);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item.major .timeline-marker {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    width: 24px;
+    height: 24px;
+    left: 14px;
+}
+
+.timeline-content h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.timeline-content p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+.stat-callout {
+    display: inline-flex;
+    flex-direction: column;
+    background: #fff3e6;
+    padding: 12px 20px;
+    border-radius: 4px;
+    margin-top: 12px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Comparison Table */
+.comparison-table {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.comparison-col {
+    padding: 24px;
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.comparison-col h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.comparison-col ul {
+    list-style: none;
+    margin-bottom: 16px;
+}
+
+.comparison-col li {
+    padding: 8px 0;
+    font-size: 0.95rem;
+}
+
+.comparison-note {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin: 0;
+}
+
+/* Party Grid */
+.party-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.party-card {
+    padding: 24px;
+    border-radius: 4px;
+    border-top: 4px solid;
+}
+
+.party-card.pro-hindi {
+    background: #fff5f0;
+    border-color: var(--pro-hindi);
+}
+
+.party-card.anti-imposition {
+    background: #f0f7f8;
+    border-color: var(--anti-imposition);
+}
+
+.party-card.neutral {
+    background: #f5f5f5;
+    border-color: var(--neutral);
+}
+
+.party-card h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.party-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.party-item strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.party-item p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* Styled List */
+.styled-list {
+    list-style: none;
+    padding: 0;
+}
+
+.styled-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 16px;
+}
+
+.styled-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+}
+
+/* Conclusion */
+.conclusion {
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Sources */
+.sources {
+    margin-top: 60px;
+    padding: 24px;
+    background: #f5f5f5;
+    border-radius: 4px;
+}
+
+.sources h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.sources ul {
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.sources li {
+    padding: 4px 0;
+}
+
+/* Footer */
+footer {
+    background: #1a1a2e;
+    color: #8899aa;
+    padding: 40px 0;
+    margin-top: 80px;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+.footer-note {
+    font-size: 0.85rem;
+}
+
+/* SVG Map Styles */
+.india-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.state {
+    stroke: #fff;
+    stroke-width: 0.5;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.state:hover {
+    opacity: 0.8;
+}
+
+.state.hindi-belt {
+    fill: var(--hindi-color);
+}
+
+.state.dravidian {
+    fill: var(--dravidian-color);
+}
+
+.state.other-indo {
+    fill: var(--other-indo);
+}
+
+.state.tibeto {
+    fill: var(--tibeto-color);
+}
+
+.state-label {
+    font-size: 8px;
+    fill: #fff;
+    text-anchor: middle;
+    pointer-events: none;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    
+    .hero {
+        padding: 60px 0 40px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .chart-section {
+        padding: 20px;
+        margin: 32px -20px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+    
+    .chart-container {
+        height: 300px;
+    }
+    
+    .pullquote {
+        font-size: 1.25rem;
+        padding: 20px;
+    }
+    
+    .timeline::before {
+        left: 12px;
+    }
+    
+    .timeline-item {
+        padding-left: 44px;
+    }
+    
+    .timeline-marker {
+        left: 4px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .timeline-item.major .timeline-marker {
+        width: 20px;
+        height: 20px;
+        left: 2px;
+    }
+    
+    .comparison-table {
+        grid-template-columns: 1fr;
+    }
+    
+    .party-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .byline {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+/* Chart.js Customizations */
+.chartjs-tooltip {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border-radius: 4px !important;
+    padding: 12px !important;
+}
