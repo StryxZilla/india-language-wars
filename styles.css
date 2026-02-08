@@ -27,12 +27,17 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Libre Franklin', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--background);
     color: var(--text-color);
     line-height: 1.7;
     font-size: 18px;
+    overflow-x: hidden;
 }
 
 .container {
@@ -89,11 +94,14 @@ body {
 .sources-nav {
     position: sticky;
     top: 0;
-    background: var(--background);
+    background: rgba(247, 247, 247, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     padding: 12px 0;
     margin-bottom: 24px;
     z-index: 90;
     border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .sources-link {
@@ -810,10 +818,18 @@ footer p {
 }
 
 .voice-quote::before {
-    content: '"';
-    font-size: 2rem;
+    content: '\201C';
+    font-size: 3rem;
     color: var(--primary-color);
-    margin-right: 4px;
+    float: left;
+    line-height: 0.8;
+    margin-right: 8px;
+    margin-top: 4px;
+    font-family: Georgia, serif;
+}
+
+.voice-quote::after {
+    content: '\201D';
 }
 
 .voice-attribution {
@@ -1269,6 +1285,34 @@ details[open] .toggle-icon {
     .section-subhead {
         font-size: 0.95rem;
         margin: 24px 0 10px 0;
+    }
+}
+
+/* Medium screens - 13" laptops */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 700px;
+    }
+    
+    .chart-container {
+        height: 400px;
+    }
+    
+    .map-container {
+        min-height: 420px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .sources-nav,
+    #reading-progress {
+        display: none !important;
+    }
+    
+    .hero {
+        background: #1a1a2e !important;
+        -webkit-print-color-adjust: exact;
     }
 }
 

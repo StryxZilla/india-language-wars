@@ -96,24 +96,7 @@ new Chart(languageCtx, {
                 }
             },
             annotation: {
-                annotations: {
-                    majorityLine: {
-                        type: 'line',
-                        xMin: 605,
-                        xMax: 605,
-                        borderColor: '#999',
-                        borderWidth: 2,
-                        borderDash: [5, 5],
-                        label: {
-                            display: true,
-                            content: '50% threshold',
-                            position: 'start',
-                            backgroundColor: 'transparent',
-                            color: '#666',
-                            font: { size: 11 }
-                        }
-                    }
-                }
+                annotations: {}
             }
         },
         scales: {
@@ -126,7 +109,7 @@ new Chart(languageCtx, {
                     text: 'Native Speakers (millions)',
                     font: { size: 12 }
                 },
-                max: 600
+                max: 580
             },
             y: {
                 grid: {
