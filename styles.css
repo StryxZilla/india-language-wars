@@ -1051,4 +1051,225 @@ footer p {
     padding: 12px !important;
 }
 
+/* TL;DR Box - High visibility summary */
+.tldr-box {
+    background: linear-gradient(135deg, #fff3e6 0%, #ffe8d6 100%);
+    border: 3px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin: -30px 0 32px 0;
+    position: relative;
+}
+
+.tldr-box::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 40px;
+    right: 40px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.tldr-box h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tldr-box p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Hero Pullquote - Moved higher */
+.pullquote-hero {
+    margin: 24px 0 32px 0;
+    font-size: 1.35rem;
+    padding: 28px 32px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+}
+
+/* Smaller pullquote for collapsed sections */
+.pullquote-small {
+    font-size: 1.1rem;
+    padding: 16px 24px;
+    margin: 24px 0 0 0;
+}
+
+/* Section subheadings for Northeast breakup */
+.section-subhead {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 28px 0 12px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Compact styled list */
+.styled-list.compact {
+    margin-bottom: 16px;
+}
+
+.styled-list.compact li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Collapsible Read More Section */
+.read-more-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.read-more-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-color);
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+    transition: background 0.2s;
+}
+
+.read-more-toggle:hover {
+    background: linear-gradient(135deg, #f0f0f0 0%, #f8f8f8 100%);
+}
+
+.toggle-icon {
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+}
+
+details[open] .toggle-icon {
+    transform: rotate(90deg);
+}
+
+.toggle-text {
+    font-size: 1rem;
+}
+
+.toggle-hint {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 400;
+    margin-left: auto;
+}
+
+.read-more-content {
+    padding: 24px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Stat Break - Large stat callout */
+.stat-break {
+    text-align: center;
+    padding: 40px 32px;
+}
+
+.stat-callout-large {
+    display: inline-block;
+}
+
+.stat-callout-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.stat-number-large {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.stat-label-large {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+.stat-source {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 16px;
+    font-style: italic;
+}
+
+/* Northeast Section specific */
+.northeast-section h2 {
+    margin-bottom: 12px;
+}
+
+.northeast-section > p:first-of-type {
+    margin-bottom: 24px;
+}
+
+/* Mobile adjustments for new elements */
+@media (max-width: 768px) {
+    .tldr-box {
+        padding: 20px 24px;
+        margin: -20px -20px 24px -20px;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+    
+    .tldr-box h3 {
+        font-size: 1rem;
+    }
+    
+    .tldr-box p {
+        font-size: 1.05rem;
+    }
+    
+    .pullquote-hero {
+        font-size: 1.15rem;
+        padding: 20px;
+        margin: 16px 0 24px 0;
+    }
+    
+    .read-more-toggle {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+    }
+    
+    .toggle-hint {
+        width: 100%;
+        margin-left: 32px;
+        margin-top: 4px;
+    }
+    
+    .read-more-content {
+        padding: 20px;
+    }
+    
+    .stat-number-large {
+        font-size: 2.5rem;
+    }
+    
+    .stat-label-large {
+        font-size: 1rem;
+    }
+    
+    .section-subhead {
+        font-size: 0.95rem;
+        margin: 24px 0 10px 0;
+    }
+}
+
 /* End of styles */
