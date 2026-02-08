@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India's Language Wars — The Complete Picture</title>
+    <meta property="og:title" content="India's Language Wars — The Complete Picture">
+    <meta property="og:description" content="22 languages. 1.4 billion people. 76 years of conflict. One infographic.">
+    <meta property="og:image" content="https://stryxzilla.github.io/india-language-wars/infographic-preview.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --hindi: #e63946;
+            --dravidian: #457b9d;
+            --indo-aryan: #2a9d8f;
+            --tibeto: #9b59b6;
+            --english: #f4a261;
+            --dark: #1d3557;
+            --light: #f1faee;
+            --accent: #e76f51;
+            --bg: #fefefe;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--dark);
+            line-height: 1.4;
+        }
+
+        /* Main Container */
+        .infographic {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            background: var(--bg);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 3px solid var(--dark);
+        }
+
+        .header h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 42px;
+            font-weight: 400;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+        }
+
+        .header .subtitle {
+            font-size: 16px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .header .subtitle strong {
+            color: var(--accent);
+        }
+
+        /* Key Stats Strip */
+        .stats-strip {
+            display: flex;
+            justify-content: space-between;
+            background: var(--dark);
+            color: white;
+            padding: 20px 32px;
+            margin-bottom: 24px;
+            border-radius: 8px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--light);
+        }
+
+        .stat-number.deaths {
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 340px 1fr 280px;
+            gap: 24px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #888;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #eee;
+        }
+
+        /* Left Column - Map + Bar Chart */
+        .left-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Map Container */
+        .map-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid #e9ecef;
+        }
+
+        .india-map {
+            width: 100%;
+            height: 200px;
+        }
+
+        .map-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-top: 12px;
+            font-size: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+        }
+
+        /* Language Bars */
+        .lang-bars {
+            flex: 1;
+        }
+
+        .bar-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .bar-label {
+            width: 70px;
+            font-size: 11px;
+            font-weight: 600;
+            text-align: right;
+            padding-right: 8px;
+        }
+
+        .bar-container {
+            flex: 1;
+            height: 16px;
+            background: #eee;
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 6px;
+            font-size: 9px;
+            font-weight: 700;
+            color: white;
+            white-space: nowrap;
+        }
+
+        .bar-fill.hindi { background: var(--hindi); }
+        .bar-fill.bengali { background: #264653; }
+        .bar-fill.marathi { background: #2a9d8f; }
+        .bar-fill.telugu { background: var(--dravidian); }
+        .bar-fill.tamil { background: #1d3557; }
+        .bar-fill.urdu { background: #6d6875; }
+        .bar-fill.gujarati { background: #e9c46a; color: #333; }
+        .bar-fill.kannada { background: #f4a261; color: #333; }
+        .bar-fill.odia { background: #e76f51; }
+        .bar-fill.malayalam { background: #0077b6; }
+
+        /* Middle Column - Timeline + Framework */
+        .middle-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Timeline */
+        .timeline-section {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #ddd;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 12px;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -18px;
+            top: 4px;
+            width: 8px;
+            height: 8px;
+            background: var(--dravidian);
+            border-radius: 50%;
+        }
+
+        .timeline-item.major::before {
+            width: 12px;
+            height: 12px;
+            left: -20px;
+            top: 2px;
+            background: var(--accent);
+            box-shadow: 0 0 0 3px rgba(231, 111, 81, 0.3);
+        }
+
+        .timeline-year {
+            font-size: 10px;
+            font-weight: 800;
+            color: var(--dravidian);
+            text-transform: uppercase;
+        }
+
+        .timeline-item.major .timeline-year {
+            color: var(--accent);
+        }
+
+        .timeline-event {
+            font-size: 11px;
+            line-height: 1.4;
+        }
+
+        .timeline-detail {
+            font-size: 10px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        /* Constitutional Framework */
+        .framework-section {
+            background: var(--dark);
+            color: white;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .framework-section .section-title {
+            color: rgba(255,255,255,0.6);
+            border-bottom-color: rgba(255,255,255,0.2);
+        }
+
+        .article-box {
+            background: rgba(255,255,255,0.1);
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 8px;
+        }
+
+        .article-num {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--light);
+        }
+
+        .article-text {
+            font-size: 10px;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+
+        /* Asymmetry Visual */
+        .asymmetry-section {
+            flex: 1;
+            background: #fff9f0;
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .asymmetry-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .asymmetry-col {
+            text-align: center;
+        }
+
+        .asymmetry-header {
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .lang-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .lang-box {
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .lang-box.mother { background: var(--dravidian); color: white; }
+        .lang-box.english { background: var(--english); color: var(--dark); }
+        .lang-box.hindi { background: var(--hindi); color: white; }
+        .lang-box.sanskrit { background: #bbb; color: #444; }
+        .lang-box.none { background: white; border: 2px dashed #ccc; color: #999; }
+
+        .asymmetry-caption {
+            text-align: center;
+            font-size: 10px;
+            color: #666;
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        /* Right Column - Power + Politics */
+        .right-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Power Breakdown */
+        .power-section {
+            background: #f0f4f8;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .power-chart {
+            margin-top: 12px;
+        }
+
+        .power-bar {
+            display: flex;
+            height: 24px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .power-segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .power-segment.hindi-belt {
+            background: var(--hindi);
+        }
+
+        .power-segment.other-states {
+            background: var(--dravidian);
+        }
+
+        .power-legend {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+        }
+
+        .power-label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .power-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+        }
+
+        .power-insight {
+            margin-top: 12px;
+            padding: 10px;
+            background: white;
+            border-left: 3px solid var(--accent);
+            font-size: 10px;
+        }
+
+        /* Party Positions */
+        .parties-section {
+            flex: 1;
+        }
+
+        .party-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+
+        .party-row {
+            display: flex;
+            align-items: stretch;
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #e9ecef;
+        }
+
+        .party-stance {
+            width: 6px;
+            flex-shrink: 0;
+        }
+
+        .party-stance.pro { background: var(--hindi); }
+        .party-stance.anti { background: var(--dravidian); }
+        .party-stance.moderate { background: #adb5bd; }
+
+        .party-info {
+            padding: 8px 10px;
+            flex: 1;
+        }
+
+        .party-name {
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .party-desc {
+            font-size: 9px;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        /* Second Language Stats */
+        .bilingual-section {
+            background: linear-gradient(135deg, var(--dark) 0%, #264653 100%);
+            color: white;
+            border-radius: 8px;
+            padding: 16px;
+        }
+
+        .bilingual-section .section-title {
+            color: rgba(255,255,255,0.6);
+            border-bottom-color: rgba(255,255,255,0.2);
+        }
+
+        .bilingual-compare {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 12px;
+        }
+
+        .bilingual-item {
+            text-align: center;
+        }
+
+        .bilingual-pct {
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .bilingual-pct.hindi-pct { color: var(--hindi); }
+        .bilingual-pct.eng-pct { color: var(--english); }
+
+        .bilingual-label {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+        }
+
+        .bilingual-vs {
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0.5;
+            align-self: center;
+        }
+
+        .bilingual-note {
+            text-align: center;
+            font-size: 9px;
+            opacity: 0.7;
+            margin-top: 10px;
+        }
+
+        /* Bottom Row */
+        .bottom-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 2px solid #e9ecef;
+        }
+
+        .bottom-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        .bottom-card-title {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .quote-card {
+            background: #f8f9fa;
+            border-left: 3px solid var(--dravidian);
+        }
+
+        .quote-text {
+            font-size: 11px;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .quote-cite {
+            font-size: 9px;
+            color: #666;
+            margin-top: 6px;
+            font-style: normal;
+        }
+
+        .solution-list {
+            list-style: none;
+        }
+
+        .solution-list li {
+            font-size: 10px;
+            padding: 4px 0;
+            padding-left: 12px;
+            position: relative;
+        }
+
+        .solution-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .census-note {
+            font-size: 10px;
+            line-height: 1.5;
+        }
+
+        .census-note strong {
+            color: var(--accent);
+        }
+
+        .status-card {
+            background: var(--accent);
+            color: white;
+            text-align: center;
+        }
+
+        .status-card .bottom-card-title {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .status-text {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .status-sub {
+            font-size: 10px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 9px;
+            color: #888;
+        }
+
+        .footer a {
+            color: var(--dravidian);
+            text-decoration: none;
+        }
+
+        /* SVG Map */
+        .state {
+            stroke: white;
+            stroke-width: 0.5;
+            transition: opacity 0.2s;
+        }
+
+        .state:hover {
+            opacity: 0.85;
+        }
+
+        .state.hindi { fill: var(--hindi); }
+        .state.dravidian { fill: var(--dravidian); }
+        .state.indo-aryan { fill: var(--indo-aryan); }
+        .state.tibeto { fill: var(--tibeto); }
+    </style>
+</head>
+<body>
+    <div class="infographic">
+        <!-- Header -->
+        <div class="header">
+            <h1>India's Language Wars</h1>
+            <p class="subtitle">22 languages. 1.4 billion people. <strong>76 years</strong> of unresolved conflict.</p>
+        </div>
+
+        <!-- Key Stats Strip -->
+        <div class="stats-strip">
+            <div class="stat-item">
+                <div class="stat-number">22</div>
+                <div class="stat-label">Scheduled Languages</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1,652</div>
+                <div class="stat-label">Mother Tongues (Census)</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">43.6%</div>
+                <div class="stat-label">Hindi Native Speakers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number deaths">70+</div>
+                <div class="stat-label">Deaths in 1965 Riots</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">91.4%</div>
+                <div class="stat-label">Diversity Index</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">76</div>
+                <div class="stat-label">Years Since "15-Year" Deadline</div>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- Left Column -->
+            <div class="left-col">
+                <!-- Map -->
+                <div class="map-section">
+                    <div class="section-title">Language Families by State</div>
+                    <svg class="india-map" viewBox="0 0 320 280">
+                        <!-- Simplified India map paths -->
+                        <!-- North - Hindi Belt -->
+                        <path class="state hindi" d="M120,80 L180,75 L220,90 L230,120 L200,150 L160,160 L120,150 L100,120 Z" title="Uttar Pradesh"/>
+                        <path class="state hindi" d="M80,100 L120,80 L120,150 L80,140 L60,120 Z" title="Rajasthan"/>
+                        <path class="state hindi" d="M100,120 L120,150 L130,180 L100,190 L70,160 Z" title="Madhya Pradesh"/>
+                        <path class="state hindi" d="M180,75 L220,60 L250,80 L230,120 L220,90 Z" title="Bihar/Jharkhand"/>
+                        <path class="state hindi" d="M140,50 L180,45 L180,75 L140,80 L120,70 Z" title="Uttarakhand/HP"/>
+                        
+                        <!-- South - Dravidian -->
+                        <path class="state dravidian" d="M140,200 L180,190 L200,220 L190,260 L160,270 L130,250 L120,220 Z" title="Tamil Nadu"/>
+                        <path class="state dravidian" d="M130,180 L180,170 L190,200 L140,200 L120,190 Z" title="Karnataka"/>
+                        <path class="state dravidian" d="M180,170 L220,160 L230,190 L200,210 L180,190 Z" title="Andhra/Telangana"/>
+                        <path class="state dravidian" d="M100,190 L130,180 L140,210 L120,230 L100,220 Z" title="Kerala"/>
+                        
+                        <!-- East - Other Indo-Aryan -->
+                        <path class="state indo-aryan" d="M220,90 L260,80 L280,110 L270,140 L230,130 Z" title="West Bengal"/>
+                        <path class="state indo-aryan" d="M160,160 L200,150 L220,170 L180,180 L160,175 Z" title="Odisha"/>
+                        <path class="state indo-aryan" d="M40,100 L80,90 L80,140 L60,160 L30,140 Z" title="Gujarat"/>
+                        <path class="state indo-aryan" d="M60,160 L100,150 L100,180 L80,200 L50,180 Z" title="Maharashtra"/>
+                        
+                        <!-- Northeast - Tibeto-Burman -->
+                        <path class="state tibeto" d="M260,60 L290,50 L300,75 L280,90 L260,80 Z" title="Northeast"/>
+                        <path class="state tibeto" d="M130,30 L160,20 L180,30 L170,50 L140,50 Z" title="J&K/Ladakh"/>
+                    </svg>
+                    <div class="map-legend">
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background: var(--hindi)"></span>
+                            Hindi Belt
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background: var(--dravidian)"></span>
+                            Dravidian
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background: var(--indo-aryan)"></span>
+                            Other Indo-Aryan
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-dot" style="background: var(--tibeto)"></span>
+                            Tibeto-Burman
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Language Bars -->
+                <div class="lang-bars">
+                    <div class="section-title">Top 10 Languages (% of Population)</div>
+                    <div class="bar-item">
+                        <span class="bar-label">Hindi</span>
+                        <div class="bar-container">
+                            <div class="bar-fill hindi" style="width: 91%;">43.6%</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Bengali</span>
+                        <div class="bar-container">
+                            <div class="bar-fill bengali" style="width: 35%;">8.0%</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Marathi</span>
+                        <div class="bar-container">
+                            <div class="bar-fill marathi" style="width: 30%;">6.9%</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Telugu</span>
+                        <div class="bar-container">
+                            <div class="bar-fill telugu" style="width: 29%;">6.7%</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Tamil</span>
+                        <div class="bar-container">
+                            <div class="bar-fill tamil" style="width: 25%;">5.7%</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Urdu</span>
+                        <div class="bar-container">
+                            <div class="bar-fill urdu" style="width: 22%;">5.0%</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Gujarati</span>
+                        <div class="bar-container">
+                            <div class="bar-fill gujarati" style="width: 20%;">4.6%</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Kannada</span>
+                        <div class="bar-container">
+                            <div class="bar-fill kannada" style="width: 16%;">3.6%</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Odia</span>
+                        <div class="bar-container">
+                            <div class="bar-fill odia" style="width: 14%;">3.1%</div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">Malayalam</span>
+                        <div class="bar-container">
+                            <div class="bar-fill malayalam" style="width: 13%;">2.9%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle Column -->
+            <div class="middle-col">
+                <!-- Timeline -->
+                <div class="timeline-section">
+                    <div class="section-title">Timeline of Conflict</div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">1937</div>
+                            <div class="timeline-event"><strong>First Agitation</strong></div>
+                            <div class="timeline-detail">Hindi made compulsory in Madras. 1,198 arrested, 2 deaths.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">1950</div>
+                            <div class="timeline-event"><strong>Constitutional Compromise</strong></div>
+                            <div class="timeline-detail">Hindi = official, English for "15 years"</div>
+                        </div>
+                        <div class="timeline-item major">
+                            <div class="timeline-year">1965</div>
+                            <div class="timeline-event"><strong>Fire & Blood</strong></div>
+                            <div class="timeline-detail">70+ killed. 2 self-immolate. Riots across Tamil Nadu.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">1967</div>
+                            <div class="timeline-event"><strong>Permanent Bilingualism</strong></div>
+                            <div class="timeline-detail">DMK wins TN. English guaranteed indefinitely.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2019</div>
+                            <div class="timeline-event"><strong>NEP Controversy</strong></div>
+                            <div class="timeline-detail">Draft mentions Hindi. Government backs down in days.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2022</div>
+                            <div class="timeline-event"><strong>#HindiTeriyaadhPoda</strong></div>
+                            <div class="timeline-detail">Amit Shah's "alternative to English" sparks backlash.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Constitutional Framework -->
+                <div class="framework-section">
+                    <div class="section-title">Constitutional Framework</div>
+                    <div class="article-box">
+                        <div class="article-num">Art. 343</div>
+                        <div class="article-text">Hindi in Devanagari is official language. English to continue for 15 years.</div>
+                    </div>
+                    <div class="article-box">
+                        <div class="article-num">Art. 351</div>
+                        <div class="article-text">Union shall promote Hindi to become "medium of expression."</div>
+                    </div>
+                    <div class="article-box">
+                        <div class="article-num">8th Schedule</div>
+                        <div class="article-text">22 "scheduled languages" recognized. Hindi is one of 22, not supreme.</div>
+                    </div>
+                </div>
+
+                <!-- Asymmetry Problem -->
+                <div class="asymmetry-section">
+                    <div class="section-title">The Asymmetry Problem</div>
+                    <div class="asymmetry-comparison">
+                        <div class="asymmetry-col">
+                            <div class="asymmetry-header">Tamil Nadu</div>
+                            <div class="lang-stack">
+                                <div class="lang-box mother">Tamil</div>
+                                <div class="lang-box english">English</div>
+                                <div class="lang-box none">No 3rd Lang</div>
+                            </div>
+                        </div>
+                        <div class="asymmetry-col">
+                            <div class="asymmetry-header">Uttar Pradesh</div>
+                            <div class="lang-stack">
+                                <div class="lang-box hindi">Hindi</div>
+                                <div class="lang-box english">English</div>
+                                <div class="lang-box sanskrit">Sanskrit</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="asymmetry-caption">
+                        Hindi Belt uses Sanskrit (25K speakers) to avoid learning a living Indian language
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-col">
+                <!-- Power Breakdown -->
+                <div class="power-section">
+                    <div class="section-title">Political Representation</div>
+                    <div class="power-chart">
+                        <div style="font-size: 9px; margin-bottom: 4px; color: #666;">POPULATION</div>
+                        <div class="power-bar">
+                            <div class="power-segment hindi-belt" style="width: 35%">35%</div>
+                            <div class="power-segment other-states" style="width: 65%">65%</div>
+                        </div>
+                        <div style="font-size: 9px; margin-bottom: 4px; color: #666;">LOK SABHA SEATS</div>
+                        <div class="power-bar">
+                            <div class="power-segment hindi-belt" style="width: 40%">40%</div>
+                            <div class="power-segment other-states" style="width: 60%">60%</div>
+                        </div>
+                        <div class="power-legend">
+                            <div class="power-label">
+                                <span class="power-dot" style="background: var(--hindi)"></span>
+                                Hindi Belt
+                            </div>
+                            <div class="power-label">
+                                <span class="power-dot" style="background: var(--dravidian)"></span>
+                                Other States
+                            </div>
+                        </div>
+                    </div>
+                    <div class="power-insight">
+                        <strong>Over-representation:</strong> Hindi Belt holds 5% more seats than population share
+                    </div>
+                </div>
+
+                <!-- Second Language Stats -->
+                <div class="bilingual-section">
+                    <div class="section-title">Who Can Actually Communicate?</div>
+                    <div class="bilingual-compare">
+                        <div class="bilingual-item">
+                            <div class="bilingual-pct hindi-pct">57%</div>
+                            <div class="bilingual-label">Speak Hindi</div>
+                        </div>
+                        <div class="bilingual-vs">vs</div>
+                        <div class="bilingual-item">
+                            <div class="bilingual-pct eng-pct">11%</div>
+                            <div class="bilingual-label">Speak English</div>
+                        </div>
+                    </div>
+                    <div class="bilingual-note">
+                        Hindi reaches 6× more — but English opens global doors
+                    </div>
+                </div>
+
+                <!-- Party Positions -->
+                <div class="parties-section">
+                    <div class="section-title">Party Positions</div>
+                    <div class="party-grid">
+                        <div class="party-row">
+                            <div class="party-stance pro"></div>
+                            <div class="party-info">
+                                <div class="party-name">BJP</div>
+                                <div class="party-desc">Pro-Hindi as "link language"</div>
+                            </div>
+                        </div>
+                        <div class="party-row">
+                            <div class="party-stance pro"></div>
+                            <div class="party-info">
+                                <div class="party-name">RSS</div>
+                                <div class="party-desc">"One nation, one language"</div>
+                            </div>
+                        </div>
+                        <div class="party-row">
+                            <div class="party-stance anti"></div>
+                            <div class="party-info">
+                                <div class="party-name">DMK</div>
+                                <div class="party-desc">Strongest opponent. Two-language policy.</div>
+                            </div>
+                        </div>
+                        <div class="party-row">
+                            <div class="party-stance anti"></div>
+                            <div class="party-info">
+                                <div class="party-name">AIADMK</div>
+                                <div class="party-desc">Anti-imposition, less vocal</div>
+                            </div>
+                        </div>
+                        <div class="party-row">
+                            <div class="party-stance moderate"></div>
+                            <div class="party-info">
+                                <div class="party-name">Congress</div>
+                                <div class="party-desc">Historically pro-Hindi, now cautious</div>
+                            </div>
+                        </div>
+                        <div class="party-row">
+                            <div class="party-stance moderate"></div>
+                            <div class="party-info">
+                                <div class="party-name">Left</div>
+                                <div class="party-desc">Supports linguistic rights</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Row -->
+        <div class="bottom-row">
+            <div class="bottom-card quote-card">
+                <div class="bottom-card-title">The Tamil Position</div>
+                <div class="quote-text">"We are not against Hindi. We are against the imposition of Hindi."</div>
+                <div class="quote-cite">— M.K. Stalin, CM Tamil Nadu, 2022</div>
+            </div>
+            <div class="bottom-card">
+                <div class="bottom-card-title">Proposed Solutions</div>
+                <ul class="solution-list">
+                    <li>Symmetric 3-language: Hindi Belt learns South language</li>
+                    <li>All 22 languages official (APJ Abdul Kalam)</li>
+                    <li>English as neutral link</li>
+                    <li>AI translation for all 22 languages</li>
+                </ul>
+            </div>
+            <div class="bottom-card">
+                <div class="bottom-card-title">The Census Asterisk</div>
+                <div class="census-note">
+                    <strong>57 "mother tongues"</strong> grouped under Hindi, including Bhojpuri (50M), Rajasthani (18M), Chhattisgarhi (18M). Are these dialects or distinct languages?
+                </div>
+            </div>
+            <div class="bottom-card status-card">
+                <div class="bottom-card-title">Current Status</div>
+                <div class="status-text">UNRESOLVED</div>
+                <div class="status-sub">The Constitution's "15 years" has become 76 and counting. No consensus in sight.</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div>Sources: Census of India 2011, Constitution of India, Election Commission</div>
+            <div><a href="https://stryxzilla.github.io/india-language-wars/">stryxzilla.github.io/india-language-wars</a></div>
+            <div>Feb 2026</div>
+        </div>
+    </div>
+</body>
+</html>
