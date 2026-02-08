@@ -110,69 +110,6 @@ body {
     color: var(--primary-color);
 }
 
-/* Floating Share Bar */
-.share-bar {
-    position: fixed;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    z-index: 100;
-    background: var(--card-bg);
-    padding: 12px 8px;
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-}
-
-.share-label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-light);
-    text-align: center;
-    margin-bottom: 4px;
-}
-
-.share-btn {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-decoration: none;
-}
-
-.share-btn.twitter {
-    background: #1da1f2;
-    color: white;
-}
-
-.share-btn.facebook {
-    background: #1877f2;
-    color: white;
-}
-
-.share-btn.linkedin {
-    background: #0a66c2;
-    color: white;
-}
-
-.share-btn.copy {
-    background: #6c757d;
-    color: white;
-}
-
-.share-btn:hover {
-    transform: scale(1.1);
-    filter: brightness(1.1);
-}
-
 /* Article Sections */
 .article-section {
     margin-bottom: 48px;
@@ -256,35 +193,6 @@ body {
 
 .chart-note a {
     color: var(--secondary-color);
-}
-
-/* Inline Share */
-.inline-share {
-    margin-top: 16px;
-    padding-top: 12px;
-    border-top: 1px dashed var(--border-color);
-    font-size: 13px;
-    color: var(--text-light);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.mini-share {
-    background: #1da1f2;
-    color: white;
-    border: none;
-    padding: 6px 14px;
-    border-radius: 16px;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.mini-share:hover {
-    background: #0d8bd9;
-    transform: scale(1.05);
 }
 
 /* Hero Stat for Second Language Advantage */
@@ -697,63 +605,6 @@ body {
     border-left: 3px solid var(--primary-color);
 }
 
-/* Share CTA Section */
-.share-cta {
-    text-align: center;
-    padding: 48px 24px;
-    margin-top: 48px;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    border-radius: 8px;
-    color: white;
-}
-
-.share-cta h3 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.5rem;
-    margin-bottom: 8px;
-}
-
-.share-cta p {
-    color: #b8c5d6;
-    margin-bottom: 24px;
-}
-
-.share-cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.cta-share-btn {
-    padding: 12px 24px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    transition: all 0.2s;
-}
-
-.cta-share-btn.twitter {
-    background: #1da1f2;
-    color: white;
-}
-
-.cta-share-btn.facebook {
-    background: #1877f2;
-    color: white;
-}
-
-.cta-share-btn.linkedin {
-    background: #0a66c2;
-    color: white;
-}
-
-.cta-share-btn:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.1);
-}
-
 /* Footer */
 footer {
     background: #1a1a2e;
@@ -823,12 +674,6 @@ footer p {
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-    .share-bar {
-        display: none;
-    }
-}
-
 @media (max-width: 768px) {
     body {
         font-size: 16px;
@@ -933,16 +778,6 @@ footer p {
         padding: 12px 20px;
     }
     
-    .share-cta {
-        margin: 32px -20px;
-        border-radius: 0;
-    }
-    
-    .inline-share {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
 }
 
 /* Voice Cards - First Person Voices Section */
@@ -1216,24 +1051,4 @@ footer p {
     padding: 12px !important;
 }
 
-/* Copied notification */
-.copy-notification {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #333;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 6px;
-    font-size: 14px;
-    z-index: 1000;
-    animation: fadeInOut 2s ease;
-}
-
-@keyframes fadeInOut {
-    0% { opacity: 0; transform: translate(-50%, 20px); }
-    15% { opacity: 1; transform: translate(-50%, 0); }
-    85% { opacity: 1; transform: translate(-50%, 0); }
-    100% { opacity: 0; transform: translate(-50%, -20px); }
-}
+/* End of styles */
